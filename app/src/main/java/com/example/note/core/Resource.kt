@@ -1,5 +1,7 @@
 package com.example.note.core
 
+import com.example.note.data.model.Note
+
 sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null,

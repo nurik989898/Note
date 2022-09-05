@@ -14,11 +14,12 @@
     android:id="@+id/notesTitle"
    android:textColor="@color/white"
    android:textStyle="bold"/>
+
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerView"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-      android:id="@+id/recyclerView"
-      android:layout_below="@id/notesTitle"/>
+       android:layout_below="@id/notesTitle" />
 
    <com.google.android.material.button.MaterialButton
        android:layout_width="match_parent"
