@@ -1,9 +1,6 @@
 package com.example.note.domain.model
 
-import androidx.room.Entity
-
-@Entity
-data class NoteEntity(
+data class NoteModel(
     val id: Int = DEFAULT_ID,
     val title: String? = null,
     val description:String? = null

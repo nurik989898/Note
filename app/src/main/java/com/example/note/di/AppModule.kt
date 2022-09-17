@@ -15,6 +15,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
     @Singleton
     @Provides
     fun provideNoteDatabase(@ApplicationContext context: Context) =
@@ -23,12 +24,9 @@ object AppModule {
             NoteDataBase::class.java,
             "note_db"
         ).allowMainThreadQueries().build()
+
     @Singleton
     @Provides
     fun provideNoteDao(noteDataBase: NoteDataBase) = noteDataBase.noteDao()
-    @Provides
-    fun provideNoteRepository(noteDao: NoteDao):NoteRepository{
-        return NoteRepositoryImpl(noteDao)
-    }
 
 }

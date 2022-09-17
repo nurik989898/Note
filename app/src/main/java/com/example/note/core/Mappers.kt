@@ -1,17 +1,16 @@
-package com.example.note.domain.repository
+package com.example.note.core
 
-import com.example.note.data.model.Note
-import com.example.note.domain.model.NoteEntity
+import com.example.note.data.model.NoteDto
+import com.example.note.domain.model.NoteModel
 
-fun NoteEntity.noteEntityToNote()=Note(
-
-        id = this.id,
-        title = this.title,
-        description = this.description
+fun NoteModel.noteEntityToNote() = NoteDto(
+    id = this.id,
+    title = this.title,
+    description = this.description
 )
 
-fun Note.noteToNoteEntity()=NoteEntity(
-        id =this.id,
-        title = this.title,
-        description = this.description
-    )
+fun NoteDto.noteToNoteEntity() = NoteModel(
+    id = this.id,
+    title = this.title,
+    description = this.description
+)

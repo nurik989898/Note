@@ -2,17 +2,20 @@ package com.example.note.database
 
 import androidx.room.*
 import androidx.room.Dao
-import com.example.note.domain.model.NoteEntity
+import com.example.note.data.model.NoteDto
 
 @Dao
 interface NoteDao {
     //CRUD
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addNote(noteEntity: NoteEntity)
-    @Query("SELECT * FROM notes")
-    suspend fun getAllNotes(): List<NoteEntity>
+    suspend fun addNote(noteModelEntity: NoteDto)
+
+    @Query("SELECT * FROM notedto")
+    suspend fun getAllNotes(): List<NoteDto>
+
     @Update
-    suspend fun editNote(noteEntity: NoteEntity)
+    suspend fun editNote(noteEntity: NoteDto)
+
     @Delete
-    suspend fun deleteNote(noteEntity: NoteEntity)
+    suspend fun deleteNote(noteEntity: NoteDto)
 }
